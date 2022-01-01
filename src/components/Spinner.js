@@ -141,7 +141,13 @@ const Spinner = ({
         </ul>
       </div>
 
-      <button onClick={handleClick}>Spin</button>
+      <button
+        onClick={handleClick}
+        type="button"
+        class="justify-center py-2 px-10 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+      >
+        Spin
+      </button>
     </div>
   );
 };

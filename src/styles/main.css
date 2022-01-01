@@ -2,26 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+.wrapper {
+  height: 546px;
+  width: 466px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 466px;
+  height: 546px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 .spinner {
   text-align: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .spinner .slots {
-  width: 400px;
+  width: 280px;
   padding: 0;
   margin: 0 auto;
   height: 250px;
-  box-shadow: 1px 1px 9px 0px #c1c1c1;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   overflow: hidden;
   overflow-y: hidden;
   text-align: center;
+  position: absolute;
+  top: 220px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
 }
 
 .spinner .slots .items {
   position: relative;
-  left: -110px;
+  left: -220px;
   display: flex;
   padding: 0;
   margin: 0;
@@ -35,7 +58,7 @@
   list-style: none;
   width: fit-content;
   min-width: 200px;
-  margin: 0 10px;
+  margin: 0 20px;
   flex-shrink: 0;
 }
 
@@ -43,4 +66,13 @@
   width: 200px;
   height: 200px;
   max-width: 200px;
+}
+
+.spinner button {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
 }
