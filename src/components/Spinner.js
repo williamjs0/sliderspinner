@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import cover from "../images/cover.png";
 
 const Spinner = ({
   spinTime = 5000,
@@ -121,33 +122,43 @@ const Spinner = ({
   };
 
   return (
-    <div className="spinner">
-      <div className="slots" ref={spinnerSlots}>
-        <ul className="items">
-          {items.map((row, i) => {
-            return (
-              <li key={i}>
-                <img src={row} alt="" />
-              </li>
-            );
-          })}
-          {items.map((row, i) => {
-            return (
-              <li key={i}>
-                <img src={row} alt="" />
-              </li>
-            );
-          })}
-        </ul>
+    <div className="wrapper m-auto text-center relative">
+      <div className="spinner text-center relative w-full	h-full">
+        <div
+          className="slots p-0 my-0 mx-auto overflow-hidden text-center absolute left-1/2 right-1/2"
+          ref={spinnerSlots}
+        >
+          <ul className="items flex relative p-0 m-0 items-center">
+            {items.map((row, i) => {
+              return (
+                <li key={i}>
+                  <img src={row} alt="" />
+                </li>
+              );
+            })}
+            {items.map((row, i) => {
+              return (
+                <li key={i}>
+                  <img src={row} alt="" />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <button
+          onClick={handleClick}
+          type="button"
+          className="absolute bottom-0 left-1/2 right-1/2 z-10 text-center py-2 px-10 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+        >
+          Spin
+        </button>
       </div>
 
-      <button
-        onClick={handleClick}
-        type="button"
-        class="justify-center py-2 px-10 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-      >
-        Spin
-      </button>
+      <div
+        className="absolute left-0 top-0 w-full	h-full"
+        style={{ backgroundImage: `url(${cover})` }}
+      />
     </div>
   );
 };
