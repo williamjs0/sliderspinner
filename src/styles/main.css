@@ -36,3 +36,18 @@
 .spinner button {
   transform: translateX(-50%);
 }
+
+.spinner .win {
+  opacity: 1;
+  animation: fade-win 1s linear;
+}
+
+@keyframes fade-win {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

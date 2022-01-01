@@ -63,6 +63,8 @@ const Spinner = ({
         onSpinStart();
       }
 
+      spinnerSlots.current.classList.remove("win");
+
       setState((s) => ({
         ...s,
         speeds: state.speeds || Math.random() + 0.5,
@@ -105,6 +107,8 @@ const Spinner = ({
           reelArray: setReel(state.itemIndex),
           isSpinStarted: false,
         }));
+
+        spinnerSlots.current.classList.add("win");
 
         if (onSpinComplete) {
           let tempIndex = "";
