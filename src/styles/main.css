@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spinner {
+  text-align: center;
+}
+
+.spinner .slots {
+  width: 400px;
+  padding: 0;
+  margin: 0 auto;
+  height: 250px;
+  box-shadow: 1px 1px 9px 0px #c1c1c1;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.spinner .slots .items {
+  position: relative;
+  left: -110px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: inherit;
+  max-height: 100%;
+  align-items: center;
+  outline: none;
+}
+
+.spinner .slots .items li {
+  list-style: none;
+  width: fit-content;
+  min-width: 200px;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.spinner .slots .items img {
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+}
