@@ -3,10 +3,8 @@ import cover from "../images/cover.png";
 
 const Spinner = ({
   spinTime = 5000,
-  spinSpeed = 1.3, //null or Speed 0.1 to 2.0
-  items = ["Money", "Gift", "Points", "Rewards", "Jackpot", "Hattrick"],
-  index = null,
-  isSpinAgain = false,
+  spinSpeed = 1.3,
+  items,
   onSpinStart = null,
   onSpinComplete = null,
   itemWidth = 200,
@@ -24,6 +22,10 @@ const Spinner = ({
     isSpinStarted: false,
   });
 
+  /**
+   * This callback will run when the component mounted
+   * The "itemIndex" holds the position of each items
+   */
   useEffect(() => {
     let itemIndex = (() => {
       let temp = {};
@@ -46,17 +48,18 @@ const Spinner = ({
     }));
   }, []);
 
+  /**
+   * Generate random index of prizes
+   * Then it finds position of each items and return it
+   */
   const setReel = (itemIndex) => {
-    let reelArray = "";
-    if (index || index === 0) {
-      reelArray = itemIndex[index];
-    } else if (isSpinAgain) {
-      reelArray = itemIndex[itemLength.current - 1];
-    }
-
-    return reelArray;
+    const randIndex = Math.floor(Math.random() * itemLength.current);
+    return itemIndex[randIndex];
   };
 
+  /**
+   * This function is responsible for starting the spinner after clicking the button
+   */
   const handleClick = () => {
     if (!state.isSpinStarted) {
       if (onSpinStart) {
@@ -67,11 +70,7 @@ const Spinner = ({
 
       setState((s) => ({
         ...s,
-        speeds: state.speeds || Math.random() + 0.5,
-        reelArray:
-          state.reelArray ||
-          (((Math.random() * itemLength.current) | 0) * state.width) /
-            itemLength.current,
+        speeds: state.speeds,
         isSpinStarted: true,
       }));
 
@@ -81,6 +80,9 @@ const Spinner = ({
     }
   };
 
+  /**
+   * This function is responsible for animating the spinner by HandleClick function
+   */
   const animate = (now) => {
     if (!begin.current) {
       begin.current = now;
@@ -103,7 +105,6 @@ const Spinner = ({
 
         setState((s) => ({
           ...s,
-          speeds: spinSpeed,
           reelArray: setReel(state.itemIndex),
           isSpinStarted: false,
         }));

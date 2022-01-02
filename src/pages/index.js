@@ -11,10 +11,12 @@ const Index = () => {
         spinSpeed={3}
         /* TODO: List of items as images of an array */
         items={data.items}
-        /* TODO: An index of images array randomly for prize */
-        index={data.randomIndex}
         /* TODO: ItemWith is the width of the item plus its padding */
         itemWidth={240}
+        /* TODO: This callback will run when spin complete */
+        onSpinComplete={(index) => {
+          console.log("prize index", index);
+        }}
       />
     </div>
   );
