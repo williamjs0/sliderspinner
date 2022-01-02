@@ -15,7 +15,7 @@
 }
 
 .spinner .slots .items {
-  left: -220px;
+  left: -220px; /* TODO: The width of the item plus its left padding */
   height: inherit;
   outline: none;
 }
@@ -23,14 +23,14 @@
 .spinner .slots .items li {
   list-style: none;
   width: fit-content;
-  width: 200px;
-  margin: 0 20px;
+  width: 200px; /* TODO: The width of the item */
+  margin: 0 20px; /* TODO: The padding of the item */
   flex-shrink: 0;
 }
 
 .spinner .slots .items img {
-  width: 200px;
-  height: 200px;
+  width: 200px; /* TODO: The width of the item */
+  height: 200px; /* TODO: The height of the item */
 }
 
 .spinner button {
@@ -39,15 +39,19 @@
 
 .spinner .win {
   opacity: 1;
-  animation: fade-win 1s linear;
+  animation: fade-win 2s linear; /* TODO: Set delay for fading in/out the prize */
 }
 
 @keyframes fade-win {
   0%,
+  33%,
+  66%,
   100% {
     opacity: 1;
   }
-  50% {
+  16%,
+  50%,
+  84% {
     opacity: 0;
   }
 }
