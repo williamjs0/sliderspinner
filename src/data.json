@@ -1,14 +1,14 @@
 {
     "items": [
-        "/assets/images/01.jpg",
-        "/assets/images/02.jpg",
-        "/assets/images/03.jpg",
-        "/assets/images/04.jpg",
-        "/assets/images/05.jpg",
-        "/assets/images/06.jpg",
-        "/assets/images/07.jpg",
-        "/assets/images/08.jpg",
-        "/assets/images/09.jpg",
-        "/assets/images/10.jpg"
+        {"image": "/assets/images/01.jpg", "name": "Name 01", "button": "Button 01"},
+        {"image": "/assets/images/02.jpg", "name": "Name 02", "button": "Button 02"},
+        {"image": "/assets/images/03.jpg", "name": "Name 03", "button": "Button 03"},
+        {"image": "/assets/images/04.jpg", "name": "Name 04", "button": "Button 04"},
+        {"image": "/assets/images/05.jpg", "name": "Name 05", "button": "Button 05"},
+        {"image": "/assets/images/06.jpg", "name": "Name 06", "button": "Button 06"},
+        {"image": "/assets/images/07.jpg", "name": "Name 07", "button": "Button 07"},
+        {"image": "/assets/images/08.jpg", "name": "Name 08", "button": "Button 08"},
+        {"image": "/assets/images/09.jpg", "name": "Name 09", "button": "Button 09"},
+        {"image": "/assets/images/10.jpg", "name": "Name 10", "button": "Button 10"}
     ]
 }

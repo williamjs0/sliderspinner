@@ -7,10 +7,15 @@
   width: 466px;
 }
 
+.spinner {
+  z-index: 10;
+}
+
 .spinner .slots {
-  width: 280px;
-  height: 250px;
-  top: 220px;
+  width: 270px;
+  height: 226px;
+  margin-left: 2px;
+  top: 231px;
   transform: translateX(-50%);
 }
 
@@ -29,11 +34,11 @@
 }
 
 .spinner .slots .items img {
-  width: 200px; /* TODO: The width of the item */
-  height: 200px; /* TODO: The height of the item */
+  width: 150px; /* TODO: The width of the item */
+  height: 150px; /* TODO: The height of the item */
 }
 
-.spinner button {
+.spinner .btn-spin {
   transform: translateX(-50%);
 }
 

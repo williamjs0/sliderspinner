@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import cover from "../images/cover.png";
+import cover from "../../images/cover.png";
+import SpinnerCard from "./Card";
 
 const Spinner = ({
   spinTime = 5000,
@@ -137,14 +138,14 @@ const Spinner = ({
             {items.map((row, i) => {
               return (
                 <li key={i}>
-                  <img src={row} alt="" />
+                  <SpinnerCard row={row} />
                 </li>
               );
             })}
             {items.map((row, i) => {
               return (
                 <li key={i}>
-                  <img src={row} alt="" />
+                  <SpinnerCard row={row} />
                 </li>
               );
             })}
@@ -154,7 +155,7 @@ const Spinner = ({
         <button
           onClick={handleClick}
           type="button"
-          className="absolute bottom-0 left-1/2 right-1/2 z-10 text-center py-2 px-10 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          className="btn-spin absolute bottom-0 left-1/2 right-1/2 z-10 text-center py-2 px-10 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
         >
           Spin
         </button>
